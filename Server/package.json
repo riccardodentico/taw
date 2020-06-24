@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Gestione del server",
+  "main": "server-ristorante.js",
+  "dependencies": {
+    "@types/socket.io": "^2.1.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.1",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.0",
+    "nodemon": "^1.19.2",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.3.0"
+  },
+  "scripts": {
+    "start": "node server-ristorante.js",
+    "start-watch": "nodemon server-ristorante.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

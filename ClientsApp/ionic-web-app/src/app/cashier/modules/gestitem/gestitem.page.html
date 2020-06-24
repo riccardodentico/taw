@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>ITEMS</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid class="grid1">
+    <ion-row class="row1 ion-justify-content-center ion-align-items-center">
+      <ion-col size-md="6" offset-md="0">
+        <ion-card class="card1">
+          <ion-card-header>
+            <ion-label position="floating">
+              <font color="black"><h1>NEW ITEM</h1></font>
+            </ion-label>
+          </ion-card-header>
+          <ion-card-content>
+            <form>
+              <ion-item>
+                <ion-label class="label1" position="floating">
+                  Code
+                </ion-label>
+                <ion-input
+                  [(ngModel)]="code"
+                  [ngModelOptions]="{standalone: true}"
+                  clearInput
+                  type="text"
+                  #Codetxt
+                  id="CodeId"
+                  required
+                  autofocus
+                >
+                </ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label class="label1" position="floating">
+                  Item Name
+                </ion-label>
+                <ion-input
+                  [(ngModel)]="itemName"
+                  [ngModelOptions]="{standalone: true}"
+                  clearInput
+                  type="text"
+                  #nametxt
+                  id="nameID"
+                  required
+                ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label class="label1" position="floating">
+                  Required time to prepare
+                </ion-label>
+                <ion-input
+                  [(ngModel)]="reqTime"
+                  [ngModelOptions]="{standalone: true}"
+                  clearInput
+                  type="text"
+                  #ttptxt
+                  id="timeToPrepareID"
+                  required
+                ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label class="label1" position="floating">
+                  Price
+                </ion-label>
+                <ion-input
+                  [(ngModel)]="price"
+                  [ngModelOptions]="{standalone: true}"
+                  clearInput
+                  type="text"
+                  #pricetxt
+                  id="priceID"
+                  required
+                ></ion-input>
+              </ion-item>
+              <br />
+              <div class="ion-margin-vertical ion-text-right">
+                <div *ngIf="errmessage" class="alert alert-danger" role="alert">
+                  Error: {{ errmessage }}
+                </div>
+                <ion-button
+                  id="btn-login"
+                  shape="round"
+                  fill="outline"
+                  type="submit"
+                  (click)="sendItem(Codetxt.value, nametxt.value, ttptxt.value, pricetxt.value)"
+                >
+                  <ion-icon slot="start" name="send"></ion-icon>
+                  Send
+                </ion-button>
+              </div>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

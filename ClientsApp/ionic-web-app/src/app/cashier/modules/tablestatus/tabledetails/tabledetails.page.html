@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/cashier/menu/tablestatus"></ion-back-button>
+      </ion-buttons>
+    <ion-title>TABLE</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <br>
+    <ion-row class="ion-padding">
+      <ion-col class="ion-padding">
+        <h3>Dish List</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let ord of loadDish">
+            <ion-text *ngFor="let lname of loadname">
+              <span *ngIf="lname.code === ord">
+                {{ ord }} : {{ lname.name }}
+              </span>
+            </ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col class="ion-padding">
+        <h3>Beverage List</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let bev of loadBev">
+            <ion-text *ngFor="let lname of loadname">
+              <span *ngIf="lname.code === bev">
+                {{ bev }} : {{ lname.name }}
+              </span>
+            </ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+        <ion-col class="ion-padding">
+            <h3>Associated Waiter : {{ loadnameWaiter }}</h3>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
